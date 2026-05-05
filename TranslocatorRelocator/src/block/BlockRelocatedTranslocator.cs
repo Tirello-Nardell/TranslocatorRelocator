@@ -57,7 +57,7 @@ namespace TranslocatorRelocator.src.block
             {
                 new WorldInteraction
                 {
-                    ActionLangCode = "translocatorrelocator:block-interaction-edit-link-key-text",
+                    ActionLangCode = "translocatorrelocatorfork:block-interaction-edit-link-key-text",
                     MouseButton = EnumMouseButton.Right,
                     HotKeyCode = "shift"
                 }

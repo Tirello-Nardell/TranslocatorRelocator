@@ -47,7 +47,7 @@
 		"value": [
 			{
 				"type": "block",
-				"code": "translocatorrelocator:relocatedtranslocator-north",
+				"code": "translocatorrelocatorfork:relocatedtranslocator-north",
 				"quantity": {
 					"avg": 1
 				}

@@ -1,0 +1,8 @@
+{
+	"translocatorrelocatorfork:v1.0.4-modid-rename": [
+		"/bir remapq translocatorrelocatorfork:relocatedtranslocator-north translocatorrelocator:relocatedtranslocator-north force",
+		"/bir remapq translocatorrelocatorfork:relocatedtranslocator-east translocatorrelocator:relocatedtranslocator-east force",
+		"/bir remapq translocatorrelocatorfork:relocatedtranslocator-south translocatorrelocator:relocatedtranslocator-south force",
+		"/bir remapq translocatorrelocatorfork:relocatedtranslocator-west translocatorrelocator:relocatedtranslocator-west force"
+	]
+}

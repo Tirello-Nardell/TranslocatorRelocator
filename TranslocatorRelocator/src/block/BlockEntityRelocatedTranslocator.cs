@@ -331,10 +331,10 @@ namespace TranslocatorRelocator.src.block
         {
             if (linkKey.Length > 0)
             {
-                dsc.AppendLine(Lang.Get("translocatorrelocator:block-info-link-key-text", linkKey));
+                dsc.AppendLine(Lang.Get("translocatorrelocatorfork:block-info-link-key-text", linkKey));
                 if (isLinked)
                 {
-                    dsc.AppendLine(Lang.Get("translocatorrelocator:block-info-linked-status"));
+                    dsc.AppendLine(Lang.Get("translocatorrelocatorfork:block-info-linked-status"));
                 }
             }
 
@@ -400,7 +400,7 @@ namespace TranslocatorRelocator.src.block
                 {
                     return;
                 }
-                guiDialogLinkKeyInput = new GuiDialogLinkKeyInput(Lang.Get("translocatorrelocator:block-interaction-edit-link-key-text"), Pos, linkKey, Api as ICoreClientAPI);
+                guiDialogLinkKeyInput = new GuiDialogLinkKeyInput(Lang.Get("translocatorrelocatorfork:block-interaction-edit-link-key-text"), Pos, linkKey, Api as ICoreClientAPI);
                 guiDialogLinkKeyInput.TryOpen();
             }
         }
