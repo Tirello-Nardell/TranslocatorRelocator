@@ -1,0 +1,6 @@
+{
+    "block-relocatedtranslocator-*": "Translocator",
+    "block-interaction-edit-link-key-text": "Edit Key",
+    "block-info-link-key-text": "Key: {0}",
+    "block-info-linked-status": "Linked"
+}

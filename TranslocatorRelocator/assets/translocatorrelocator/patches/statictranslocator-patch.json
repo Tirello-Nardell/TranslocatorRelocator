@@ -1,0 +1,57 @@
+[
+	{
+		"file": "game:blocktypes/machine/statictranslocator.json",
+		"op": "remove",
+		"path": "/resistance"
+	},
+	{
+		"file": "game:blocktypes/machine/statictranslocator.json",
+		"op": "add",
+		"path": "/resistanceByType",
+		"value": {
+			"*-unrepairable-*": 9999,
+			"*-broken-*": 9999,
+			"*-normal-*": 6
+		}
+	},
+	{
+		"file": "game:blocktypes/machine/statictranslocator.json",
+		"op": "add",
+		"path": "/requiredMiningTierByType",
+		"value": {
+			"*-unrepairable-*": 196,
+			"*-broken-*": 196,
+			"*-normal-*": 5
+		}
+	},
+	{
+		"file": "game:blocktypes/machine/statictranslocator.json",
+		"op": "replace",
+		"path": "/requiredMiningTierByType/*-normal-*",
+		"value": 5,
+		"condition": {
+			"when": "staticTranslocatorRequiredMiningTier",
+			"useValue": true
+		}
+	},
+	{
+		"file": "game:blocktypes/machine/statictranslocator.json",
+		"op": "replace",
+		"path": "/behaviors/0/name",
+		"value": "DefaultDropsHorizontalOrientable"
+	},
+	{
+		"file": "game:blocktypes/machine/statictranslocator.json",
+		"op": "replace",
+		"path": "/drops",
+		"value": [
+			{
+				"type": "block",
+				"code": "translocatorrelocator:relocatedtranslocator-north",
+				"quantity": {
+					"avg": 1
+				}
+			}
+		]
+	}
+]
