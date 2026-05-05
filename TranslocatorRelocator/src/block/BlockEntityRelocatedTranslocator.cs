@@ -50,7 +50,12 @@ namespace TranslocatorRelocator.src.block
         {
             Random random = new Random();
             int index = random.Next(links.Length);
-            return links[index].ToVec3d().Add(0.5, 1.0, 0.5);
+            BlockPos destPos = links[index];
+
+            Block destBlock = Api.World.BlockAccessor.GetBlock(destPos);
+            BlockFacing facing = BlockFacing.FromCode(destBlock?.Variant?["side"])?.Opposite ?? BlockFacing.NORTH;
+
+            return destPos.ToVec3d().Add(0.5 + facing.Normali.X, 1.0, 0.5 + facing.Normali.Z);
         }
 
         public BlockEntityRelocatedTranslocator()
@@ -217,12 +222,12 @@ namespace TranslocatorRelocator.src.block
             int num5 = 172;
             simpleParticleProperties.Color = (num3 << 16) | (num4 << 8) | num5 | 0x32000000;
             simpleParticleProperties.AddPos.Set(0.0, 0.0, 0.0);
-            simpleParticleProperties.BlueEvolve = null;
-            simpleParticleProperties.RedEvolve = null;
-            simpleParticleProperties.GreenEvolve = null;
+            simpleParticleProperties.BlueEvolve = EvolvingNatFloat.NoValueSet;
+            simpleParticleProperties.RedEvolve = EvolvingNatFloat.NoValueSet;
+            simpleParticleProperties.GreenEvolve = EvolvingNatFloat.NoValueSet;
             simpleParticleProperties.MinSize = 0.1f;
             simpleParticleProperties.MaxSize = 0.2f;
-            simpleParticleProperties.SizeEvolve = null;
+            simpleParticleProperties.SizeEvolve = EvolvingNatFloat.NoValueSet;
             simpleParticleProperties.OpacityEvolve = EvolvingNatFloat.create(EnumTransformFunction.LINEAR, 100f);
             bool flag3 = base.Block.Variant["side"] == "east" || base.Block.Variant["side"] == "west";
             particleAngle = (flag2 ? (particleAngle + 5f * dt) : 0f);
@@ -312,12 +317,12 @@ namespace TranslocatorRelocator.src.block
             int num2 = 221;
             int num3 = 172;
             ownBlock.teleportParticles.Color = (num << 16) | (num2 << 8) | num3 | 0x64000000;
-            ownBlock.teleportParticles.BlueEvolve = null;
-            ownBlock.teleportParticles.RedEvolve = null;
-            ownBlock.teleportParticles.GreenEvolve = null;
+            ownBlock.teleportParticles.BlueEvolve = EvolvingNatFloat.NoValueSet;
+            ownBlock.teleportParticles.RedEvolve = EvolvingNatFloat.NoValueSet;
+            ownBlock.teleportParticles.GreenEvolve = EvolvingNatFloat.NoValueSet;
             ownBlock.teleportParticles.MinSize = 0.1f;
             ownBlock.teleportParticles.MaxSize = 0.2f;
-            ownBlock.teleportParticles.SizeEvolve = null;
+            ownBlock.teleportParticles.SizeEvolve = EvolvingNatFloat.NoValueSet;
             ownBlock.teleportParticles.OpacityEvolve = EvolvingNatFloat.create(EnumTransformFunction.QUADRATIC, -10f);
             Api.World.SpawnParticles(ownBlock.teleportParticles);
         }

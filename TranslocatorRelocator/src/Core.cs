@@ -57,7 +57,7 @@ namespace TranslocatorRelocator.src
 
         public override void Dispose()
         {
-            harmony?.UnpatchAll();
+            harmony?.UnpatchAll(Mod.Info.ModID);
         }
 
         private bool loadConfig(ICoreAPI api)

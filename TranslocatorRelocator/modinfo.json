@@ -8,6 +8,6 @@
     "description": "Move and link translocators at will.",
     "version": "1.0.3",
     "dependencies": {
-        "game": ""
+        "game": "1.22.0"
     }
 }
