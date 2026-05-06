@@ -1,6 +1,6 @@
 # Translocator Relocator Fork
 
-A community-maintained build of [Windows98's Translocator Relocator](https://mods.vintagestory.at/show/mod/22557) updated for **Vintage Story 1.22**.
+Translocator Relocator was originally created by **Windows98** — see the [original mod page](https://mods.vintagestory.at/show/mod/22557). Updated here for **Vintage Story 1.22**.
 
 Mod ID: `translocatorrelocatorfork`
 

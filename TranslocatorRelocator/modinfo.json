@@ -3,7 +3,7 @@
     "modid": "translocatorrelocatorfork",
     "name": "Translocator Relocator Fork",
     "authors": ["Windows98", "Tirello"],
-    "description": "Move and link translocators at will. (Community 1.22 build of Windows98's mod.)",
+    "description": "Move and link translocators at will. Original by Windows98; updated for VS 1.22.",
     "version": "1.0.4",
     "dependencies": {
         "game": "1.22.0"
