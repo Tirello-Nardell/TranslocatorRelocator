@@ -4,7 +4,7 @@
     "name": "Translocator Relocator Fork",
     "authors": ["Windows98", "Tirello"],
     "description": "Move and link translocators at will. Original by Windows98; updated for VS 1.22.",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "dependencies": {
         "game": "1.22.0"
     }
