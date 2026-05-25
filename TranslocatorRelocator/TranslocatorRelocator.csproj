@@ -4,6 +4,11 @@
     <TargetFramework>net10.0</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>bin\$(Configuration)\Mods\mod</OutputPath>
+    <!-- Release packaging. ModVersion must stay in sync with modinfo.json's "version" field. -->
+    <ModId>translocatorrelocatorfork</ModId>
+    <ModVersion>1.0.5</ModVersion>
+    <ReleasesDir>$(ProjectDir)Releases</ReleasesDir>
+    <ReleasePath>$(ReleasesDir)\$(ModId)_$(ModVersion).zip</ReleasePath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -60,5 +65,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
   </Content>
 </ItemGroup>
+
+  <!-- Package the build output into a release zip after Release builds.
+       ZipDirectory (.NET 6+) emits forward-slash entry names on Windows, so
+       the resulting archive unpacks correctly on Linux as well as Windows. -->
+  <Target Name="ZipRelease" AfterTargets="Build" Condition=" '$(Configuration)' == 'Release' ">
+    <Message Text="Packaging $(ReleasePath)" Importance="high" />
+    <MakeDir Directories="$(ReleasesDir)" />
+    <Delete Files="$(ReleasePath)" />
+    <ZipDirectory SourceDirectory="$(OutputPath)" DestinationFile="$(ReleasePath)" />
+  </Target>
 
 </Project>
